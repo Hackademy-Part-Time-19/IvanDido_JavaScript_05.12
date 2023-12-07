@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubrica</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    
+    <style>
+        
+        *{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+        }
+        
+        button{
+            width: 80px;
+            height: 30px;
+            border: none;
+            background-color: #0c1821;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        
+        
+    </style>
+    
+</head>
+
+<body style="display: flex; margin: 0px;">
+    
+    <div id="container-modifica" style="width: 100%; height: 100vh; position: absolute; background-color: rgb(0,0,0,0.9); z-index: 2; justify-content: center; align-items: center; display: none;">
+        <div id="container-card" style="height: 70vh; width: 350px; background-color: #0c1821; border-radius: 30px; padding: 30px; display: flex; flex-direction: column; align-items: center; justify-content: space-around; ">
+            <h4>Modifica</h4>
+            <div style="width: 300px; height: 50px;  border-radius: 10px; border: none; background-color: #1b2a41; display: flex; align-items: center; justify-content: space-around; margin-bottom: 30px;">
+                <input type="text" placeholder="Nuovo Nome" style="border: none; background-color: transparent; color: white; outline: none; width: 100%; height:25px; border-radius: 10px;">   
+            </div>
+            
+            <div style="width: 300px; height: 50px;  border-radius: 10px; border: none; background-color: #1b2a41; display: flex; align-items: center; justify-content: space-around;margin-bottom: 30px;">
+                <input type="text" placeholder="Nuovo Cognome" style="border: none; background-color: transparent; color: white; outline: none; width: 100%; height: 25px; border-radius: 10px;">   
+            </div>
+            
+            <div style="width: 300px; height: 50px;  border-radius: 10px; border: none; background-color: #1b2a41; display: flex; align-items: center; justify-content: space-around;">
+                <input type="text" placeholder="Nuovo Numero" style="border: none; background-color: transparent; color: white; outline: none; width: 100%; height: 25px; border-radius: 10px;">   
+            </div>
+            
+            <div style="width: 300px; height: 50px;  border-radius: 10px; border: none; background-color: #619b8a; display: flex; align-items: center; justify-content: space-around; cursor: pointer;">
+                <h5 style="color: #000000;">Aggiorna Dati</h5>   
+            </div>  
+            <i onclick="modificaOff()" style="color: red; cursor: pointer;" class="bi bi-x-circle"></i>
+        </div>
+        
+    </div>
+    
+    <div style="background-color: #000000; height: 100vh; flex: 2; border-right: 1px solid #0c1821; padding-left: 20px; padding-top: 20px;">
+        
+        <div style="display: flex; align-content: center;">
+            <img style="width: 50px; height: 50px; border-radius: 100%; object-fit: cover; border: 1px solid #0c1821; margin-right: 15px;" src="https://www.firenzetoday.it/~media/horizontal-hi/17491850264006/paulo-dybala.jpg">
+            <h5 style="font-size: 15px; position: relative; bottom: 10px; font-weight: 600;">Paulo Dybala</h5>
+        </div>
+        
+        <div  style="display: flex;justify-content: space-between; align-items: center; ">
+            <div style="width: 200px; height: 30px;  border-radius: 10px; border: none; background-color: #0c1821; display: flex; align-items: center; justify-content: space-around;">
+                <i id="CercaContatto" class="bi bi-search"></i>
+                <input type="text" placeholder="Cerca persone..." style="border: none; background-color: transparent; color: white; outline: none;"> 
+            </div>
+            <i id="CreaContatto" onclick="aggiuntaOn()" class="bi bi-plus-circle" style="position: relative; right: 25px; cursor: pointer;"></i>
+            
+        </div>
+        
+    </div>
+    
+    <div style="background-color: #000000; height: 100vh; flex: 6;  padding-left: 20px; padding-top: 20px;">
+        
+        <div id="containerContatti" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #0c1821;">
+        
+        </div>  
+        </div>
+        
+        <div id="container-inserimento" style="border-bottom: 1px solid #0c1821; height: 80px; justify-content: space-around; align-items: center; display: none;">
+            <input id="inputNome" type="text" placeholder="Inserisci Nome" style="border: none; background-color:#0c1821; color: white; outline: none; height: 25px; border-radius: 10px;">
+            <input id="inputCognome" type="text" placeholder="Inserisci Nome" style="border: none; background-color:#0c1821; color: white; outline: none; height: 25px; border-radius: 10px;">
+            <input id="inputNumero" type="text" placeholder="Inserisci Numero" style="border: none; background-color:#0c1821; color: white; outline: none; height: 25px; border-radius: 10px;">
+            <button onclick="aggiungiContatto()">Salva</button>      
+        </div>   
+    </div>
+    
+    <script>
+        
+        function aggiuntaOn(){
+            if(document.getElementById("container-inserimento").style.display == "flex"){
+                document.getElementById("container-inserimento").style.display = "none";}
+                else document.getElementById("container-inserimento").style.display = "flex";
+            }
+            
+            function modificaOn(){
+                document.getElementById("container-modifica").style.display = "flex"
+            }
+            
+            function modificaOff(){
+                document.getElementById("container-modifica").style.display = "none"
+            }
+            
+        
+            </script>
+            
+        </body>
+        </html>
